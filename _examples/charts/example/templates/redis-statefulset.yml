@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ .Release.Name }}-redis
+spec:
+  serviceName: {{ .Release.Name }}-redis
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-redis
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-redis
+    spec:
+      containers:
+        - name: main
+          image: redis
+          args:
+            - redis-server
+            - --requirepass
+            - $(REDIS_PASSWORD)
+          envFrom:
+            - configMapRef:
+                name: {{ .Release.Name }}
+          ports:
+            - name: redis
+              containerPort: 6379
+          resources:
+            requests:
+              cpu: 50m
+              memory: 50Mi
+            limits:
+              cpu: 100m
+              memory: 100Mi

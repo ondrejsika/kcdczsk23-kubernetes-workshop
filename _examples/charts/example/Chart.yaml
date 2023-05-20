@@ -1,0 +1,5 @@
+apiVersion: v2
+name: example
+description: Example application for KCD.live
+type: application
+version: 0.1.0

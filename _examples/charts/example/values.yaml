@@ -1,0 +1,6 @@
+# === Required ===
+host:
+REDIS_PASSWORD:
+
+# === Optional ===
+replicas: 2

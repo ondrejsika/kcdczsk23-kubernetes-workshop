@@ -48,3 +48,9 @@ install-cluster-issuer-http:
 
 install-cluster-issuer-cloudflare:
 	kubectl apply -f _examples/clusterissuer-cloudflare.yml
+
+install-from-helm:
+	helm upgrade --install \
+		example ./_examples/charts/example \
+		--values ./example.values.yaml \
+		--wait

@@ -1,0 +1,3 @@
+host: example-helm.127-0-0-1.uk
+REDIS_PASSWORD: password
+replicas: 3
