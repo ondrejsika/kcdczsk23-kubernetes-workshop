@@ -30,3 +30,6 @@ build:
 
 push:
 	docker push ${IMAGE}
+
+install-from-manifest:
+	kubectl apply -f _examples/manifests
