@@ -4,4 +4,6 @@ metadata:
   name: {{ .Release.Name }}
 data:
   REDIS_PASSWORD: {{ required ".Values.REDIS_PASSWORD is required" .Values.REDIS_PASSWORD }}
+  {{ if .Values.PREFIX }}
   PREFIX: {{ .Values.PREFIX }}
+  {{ end }}

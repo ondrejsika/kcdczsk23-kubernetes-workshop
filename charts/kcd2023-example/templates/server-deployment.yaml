@@ -11,6 +11,8 @@ spec:
     metadata:
       labels:
         app: {{ .Release.Name }}-server
+      annotations:
+        checksum/config: {{include (print $.Template.BasePath "/configmap.yml") . | sha256sum}}
     spec:
       containers:
         - name: main
