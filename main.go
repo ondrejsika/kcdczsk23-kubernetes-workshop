@@ -32,7 +32,7 @@ func main() {
 			counter = -1
 		}
 		w.Header().Set("Content-Type", "text/html")
-		fmt.Fprintf(w, "<h1>Hello KCD! %d %s</h1>\n", counter, HOSTNAME)
+		fmt.Fprintf(w, "<h1>%sHello KCD! %d %s</h1>\n", os.Getenv("PREFIX"), counter, HOSTNAME)
 		log.Info().
 			Str("hostname", HOSTNAME).
 			Str("method", r.Method).

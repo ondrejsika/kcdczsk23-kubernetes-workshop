@@ -2,4 +2,4 @@ apiVersion: v2
 name: kcd2023-example
 description: Example for KCD.live 2023
 type: application
-version: 0.1.0
+version: 0.2.0

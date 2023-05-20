@@ -1,5 +1,5 @@
-IMAGE = ondrejsika/kcdczsk23-server
-#IMAGE = reg.istry.cz/ondrejsika/kcdczsk23-server
+# IMAGE = ondrejsika/kcdczsk23-server
+IMAGE = reg.istry.cz/ondrejsika/kcdczsk23-server:2
 
 help:
 	@echo "See Makefile"
