@@ -33,3 +33,18 @@ push:
 
 install-from-manifest:
 	kubectl apply -f _examples/manifests
+
+install-cert-manager:
+	helm upgrade --install \
+		cert-manager cert-manager \
+		--repo https://charts.jetstack.io \
+		--create-namespace \
+		--namespace cert-manager \
+		--set installCRDs=true \
+		--wait
+
+install-cluster-issuer-http:
+	kubectl apply -f _examples/clusterissuer-http.yml
+
+install-cluster-issuer-cloudflare:
+	kubectl apply -f _examples/clusterissuer-cloudflare.yml
