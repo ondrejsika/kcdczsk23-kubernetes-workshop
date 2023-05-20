@@ -1,0 +1,6 @@
+# === Required ===
+REDIS_PASSWORD:
+
+# === Optional ===
+image: ondrejsika/kcdczsk23-server
+replicas: 2
