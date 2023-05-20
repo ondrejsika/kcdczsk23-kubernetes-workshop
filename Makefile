@@ -22,6 +22,9 @@ install-hello-world:
 		--values hello-world.values.yaml \
 		--wait
 
+uninstall-hello-world:
+	helm uninstall hello
+
 build:
 	docker build --platform linux/amd64 -t ${IMAGE} .
 
