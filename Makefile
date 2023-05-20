@@ -1,3 +1,6 @@
+IMAGE = ondrejsika/kcdczsk23-server
+#IMAGE = reg.istry.cz/ondrejsika/kcdczsk23-server
+
 help:
 	@echo "See Makefile"
 
@@ -15,3 +18,9 @@ install-hello-world:
 		hello-world --repo https://helm.sikalabs.io \
 		--values hello-world.values.yaml \
 		--wait
+
+build:
+	docker build --platform linux/amd64 -t ${IMAGE} .
+
+push:
+	docker push ${IMAGE}
